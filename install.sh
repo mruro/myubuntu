@@ -34,11 +34,10 @@ myubuntu() {
   sudo apt-get -y autoremove
 
   printf "${BLUE}Installing Ubuntu prepared packages...${NORMAL}\n"
-  sudo apt-get -y install curl wget git zsh emacs24-nox byobu
+  sudo apt-get -y install curl wget git zsh emacs24-nox byobu openssh-server openssh-client
 
   # git directory structure
   mkdir -p ~/git/src/github.com
-  mkdir -p ~/git/src/safelayer.com
 
   # config Byobu
   printf "${BLUE}Installing and configuring Byobu...${NORMAL}\n"
