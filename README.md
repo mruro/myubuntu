@@ -4,9 +4,27 @@ Sets up my Ubuntu Desktop System (experiment)
 
 To execute it:
 
-### Basic Installation
+### Basic Installation (Root mode)
 
-This Ubuntu config is installed by running one of the following commands in your terminal. 
+This Ubuntu config is installed by running one of the following commands in your terminal as root. 
+You can install this via the command-line with either `curl` or `wget`. 
+
+#### via curl
+
+```shell
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/jig/myubuntu/master/root-install.sh)"
+```
+
+#### via wget
+
+```shell
+bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/master/root-install.sh -O -)"
+```
+
+
+### Basic Installation (User mode)
+
+This Ubuntu config is installed by running one of the following commands in your terminal as the main user of this desktop. 
 You can install this via the command-line with either `curl` or `wget`. 
 
 #### via curl
