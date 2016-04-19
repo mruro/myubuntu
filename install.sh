@@ -34,13 +34,7 @@ myubuntu() {
   ## sudo apt-get -y autoremove
 
   printf "${BLUE}Installing Ubuntu prepared packages...${NORMAL}\n"
-  sudo apt-get -y install \
-      curl \
-      wget \
-      git \
-      zsh \
-      emacs24-nox \
-      byobu
+  sudo apt-get -y install curl wget git zsh emacs24-nox byobu
 
   # git directory structure
   mkdir -p ~/git/src/github.com
