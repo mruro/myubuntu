@@ -2,9 +2,9 @@
 
 Sets up my Ubuntu Desktop System (experiment)
 
-To execute it:
+To execute it, you must login with your username (must be sudoer):
 
-### Basic Installation
+### Installation
 
 This Ubuntu config is installed by running one of the following commands in your terminal as the main user of this desktop. 
 You can install this via the command-line with either `curl` or `wget`. 
