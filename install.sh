@@ -27,15 +27,15 @@ myubuntu() {
   # which may fail on systems lacking tput or terminfo
   set -e
 
-  # sudo apt-get update
-  # sudo apt-get -y upgrade
-  # sudo apt-get -y dist-upgrade
-  # sudo apt-get -y autoremove
+  ## sudo apt-get update
+  ## sudo apt-get -y upgrade
+  ## sudo apt-get -y dist-upgrade
+  ## sudo apt-get -y autoremove
 
   sudo apt-get -y install \
       git \
-      emacs24-nox \
-      byobu \
+  ##    emacs24-nox \
+  ##    byobu \
       zsh \
       curl \
       wget       
@@ -58,8 +58,10 @@ EOF
   fi
 
   # oh-my-zsh
-  ## echo -n "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" | sed -e "s/env zsh//" | sh
-  ## sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
+  echo -n "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" | sed -e "s/env zsh//" > /tmp/install-zsh.sh
+  chmod 700 /tmp/install-zsh.sh
+  /tmp/install-zsh.sh
+  sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
   
   # Powerline
   mkdir -p ~/git/src/github.com/powerline
