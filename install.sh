@@ -58,7 +58,7 @@ EOF
   printf "${BLUE}Installing Oh-my-zsh...${NORMAL}\n"
   echo -n "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" | sed -e "s/env zsh//" > /tmp/install-zsh.sh
   chmod 700 /tmp/install-zsh.sh
-  /tmp/install-zsh.sh
+  ( exec /tmp/install-zsh.sh )
   sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
   
   # Powerline
