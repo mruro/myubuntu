@@ -27,11 +27,13 @@ myubuntu() {
   # which may fail on systems lacking tput or terminfo
   set -e
 
+  printf "${BLUE}Upgrading Ubuntu...${NORMAL}\n"
   ## sudo apt-get update
   ## sudo apt-get -y upgrade
   ## sudo apt-get -y dist-upgrade
   ## sudo apt-get -y autoremove
 
+  printf "${BLUE}Installing Ubuntu prepared packages...${NORMAL}\n"
   sudo apt-get -y install \
       git \
   ##    emacs24-nox \
@@ -44,6 +46,7 @@ myubuntu() {
   mkdir -p ~/git/src/github.com
 
   # config Byobu
+  printf "${BLUE}Installing and configuring Byobu...${NORMAL}\n"
   byobu-ctrl-a emacs
 
   if [ ! -d ~/.byobu ]; then
@@ -58,12 +61,14 @@ EOF
   fi
 
   # oh-my-zsh
+  printf "${BLUE}Installing Oh-my-zsh...${NORMAL}\n"
   echo -n "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" | sed -e "s/env zsh//" > /tmp/install-zsh.sh
   chmod 700 /tmp/install-zsh.sh
   /tmp/install-zsh.sh
   sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
   
   # Powerline
+  printf "${BLUE}Installing Powerline fonts...${NORMAL}\n"
   mkdir -p ~/git/src/github.com/powerline
   if [ ! -d fonts ]; then
       cd ~/git/src/github.com/powerline
@@ -77,6 +82,7 @@ EOF
 
   ###################################
   # Docker
+  printf "${BLUE}Installing Docker...${NORMAL}\n"
   sudo apt-get -y install apt-transport-https ca-certificates
   sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
   
@@ -96,10 +102,12 @@ EOF
   # i per que faci servir el nou kernel
   
   # Docker Compose i Machine
+  printf "${BLUE}Installing docker-compose...${NORMAL}\n"
   curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
   sudo mv /tmp/docker-compose /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
 
+  printf "${BLUE}Installing docker-machine...${NORMAL}\n"
   curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /tmp/docker-machine 
   sudo mv /tmp/docker-machine /usr/local/bin/docker-machine 
   sudo chmod +x /usr/local/bin/docker-machine
