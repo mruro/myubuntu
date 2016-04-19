@@ -26,7 +26,7 @@ myubuntu() {
   # Only enable exit-on-error after the non-critical colorization stuff,
   # which may fail on systems lacking tput or terminfo
   set -e
-
+ 
   printf "${BLUE}Upgrading Ubuntu...${NORMAL}\n"
   sudo apt-get update
   sudo apt-get -y upgrade
@@ -66,8 +66,8 @@ EOF
   # Powerline
   printf "${BLUE}Installing Powerline fonts...${NORMAL}\n"
   mkdir -p ~/git/src/github.com/powerline
+  cd ~/git/src/github.com/powerline
   if [ ! -d fonts ]; then
-      cd ~/git/src/github.com/powerline
       git clone https://github.com/powerline/fonts.git
       cd fonts
       ./install.sh
@@ -90,7 +90,7 @@ EOF
   sudo apt-get update
   sudo apt-get -y purge lxc-docker
   sudo apt-get -y install linux-image-extra-$(uname -r)
-  sudo apt-get -y install  apparmor
+  sudo apt-get -y install apparmor
   sudo apt-get -y install docker-engine
   sudo usermod -aG docker $USER
   
