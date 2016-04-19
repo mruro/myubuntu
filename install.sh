@@ -28,13 +28,13 @@ myubuntu() {
   set -e
 
   printf "${BLUE}Upgrading Ubuntu...${NORMAL}\n"
-  sudo apt-get update
+  ## sudo apt-get update
   ## sudo apt-get -y upgrade
   ## sudo apt-get -y dist-upgrade
   ## sudo apt-get -y autoremove
 
   printf "${BLUE}Installing Ubuntu prepared packages...${NORMAL}\n"
-  sudo apt-get -y install curl wget git zsh emacs24-nox byobu
+  ## sudo apt-get -y install curl wget git zsh emacs24-nox byobu
 
   # git directory structure
   mkdir -p ~/git/src/github.com
