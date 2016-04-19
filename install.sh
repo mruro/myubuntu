@@ -52,7 +52,7 @@ EOF
   # oh-my-zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-  echo 'ZSH_THEME="agnoster"' >> ~/.zshrc
+  sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
   
   # Powerline
   mkdir -p ~/git/src/github.com/powerline
