@@ -38,6 +38,8 @@ main() {
   mkdir -p ~/git/src/github.com
 
   # config Byobu
+  byobu-ctrl-a emacs
+
   cat > ~/.byobu/.tmux.conf <<EOF
 set -g mouse-select-pane on
 set -g mouse-select-window on
@@ -61,31 +63,31 @@ EOF
   # botó dret, i selecciona un font adaptat a Powerline
   # per exemple: Liberation Mono for Powerline
 
-###################################
-# Docker
-sudo apt-get install apt-transport-https ca-certificates
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
- 
-sudo su -
+  ###################################
+  # Docker
+  sudo apt-get install apt-transport-https ca-certificates
+  sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+  
+  sudo su -
   echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /etc/apt/sources.list.d/docker.list
-exit
-sudo apt-get update
-sudo apt-get -y purge lxc-docker
-sudo apt-get -y install linux-image-extra-$(uname -r)
-sudo apt-get -y install  apparmor
-sudo apt-get -y install docker-engine
-sudo usermod -aG docker jig
- 
-# Rebota (per a que et posi efectivament al grup de docker,
-# i per que faci servir el nou kernel
- 
-# Docker Compose i Machine
-sudo su -
+  exit
+  sudo apt-get update
+  sudo apt-get -y purge lxc-docker
+  sudo apt-get -y install linux-image-extra-$(uname -r)
+  sudo apt-get -y install  apparmor
+  sudo apt-get -y install docker-engine
+  sudo usermod -aG docker jig
+  
+  # Rebota (per a que et posi efectivament al grup de docker,
+  # i per que faci servir el nou kernel
+  
+  # Docker Compose i Machine
+  sudo su -
   curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
   curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
-  chmod +x /usr/local/bin/docker-machine
-exit
+      chmod +x /usr/local/bin/docker-machine
+  exit
 }
 
 # Check if reboot is needed
