@@ -92,6 +92,7 @@ EOF
   sudo apt-get -y install apparmor
   sudo apt-get -y install docker-engine
   sudo usermod -aG docker $USER
+  printf "${YELLOW}You must logout and login to use Docker without sudo (use sudo docker ... meanwhile)...${NORMAL}\n"
   
   # Rebota (per a que et posi efectivament al grup de docker,
   # i per que faci servir el nou kernel
