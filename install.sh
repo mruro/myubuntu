@@ -27,21 +27,6 @@ main() {
   # which may fail on systems lacking tput or terminfo
   set -e
 
-  # Prevent the cloned repository from having insecure permissions. Failing to do
-  # so causes compinit() calls to fail with "command not found: compdef" errors
-  # for users with insecure umasks (e.g., "002", allowing group writability). Note
-  # that this will be ignored under Cygwin by default, as Windows ACLs take
-  # precedence over umasks except for filesystems mounted with option "noacl".
-  umask g-w,o-w
-
-  # Check OS is Linux
-  if [ "$OSTYPE" != linux-gnu ]; then
-    if git --version | grep msysgit > /dev/null; then
-      echo "Error: This script is valid for Linux only"
-      exit 1
-    fi
-  fi
-
   sudo apt-get update
   sudo apt-get -y upgrade
   # sudo apt-get -y dist-upgrade
