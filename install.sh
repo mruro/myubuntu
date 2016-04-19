@@ -55,6 +55,7 @@ set -g mouse-utf8 on
 set -g default-shell /usr/bin/zsh
 set -g default-command /usr/bin/zsh
 EOF
+  fi
 
   # oh-my-zsh
   ## echo -n "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" | sed -e "s/env zsh//" | sh
