@@ -1,7 +1,7 @@
 #!/bin/sh
 # From https://github.com/robbyrussell/oh-my-zsh/blob/master/tools/install.sh
 
-main() {
+myubuntu() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
   if which tput >/dev/null 2>&1; then
@@ -32,7 +32,13 @@ main() {
   # sudo apt-get -y dist-upgrade
   sudo apt-get -y autoremove
 
-  sudo apt-get -y install git emacs24-nox byobu zsh
+  sudo apt-get -y install \
+      git \
+      emacs24-nox \
+      byobu \
+      zsh \
+      curl \
+      wget       
 
   # git directory structure
   mkdir -p ~/git/src/github.com
@@ -51,7 +57,6 @@ EOF
 
   # oh-my-zsh
   echo -n "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" | sed -e "s/env zsh//" | sh
-
   sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc
   
   # Powerline
@@ -76,19 +81,22 @@ EOF
   sudo apt-get -y install linux-image-extra-$(uname -r)
   sudo apt-get -y install  apparmor
   sudo apt-get -y install docker-engine
-  sudo usermod -aG docker jig
+  sudo usermod -aG docker $USER
   
   # Rebota (per a que et posi efectivament al grup de docker,
   # i per que faci servir el nou kernel
   
   # Docker Compose i Machine
-  sudo su -
-  curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-  chmod +x /usr/local/bin/docker-compose
-  curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
-      chmod +x /usr/local/bin/docker-machine
+  curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
+  sudo mv /tmp/docker-compose /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
+
+  curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /tmp/docker-machine 
+  sudo mv /tmp/docker-machine /usr/local/bin/docker-machine 
+  sudo chmod +x /usr/local/bin/docker-machine
+
   exit
 }
 
 # Check if reboot is needed
-main
+myubuntu
