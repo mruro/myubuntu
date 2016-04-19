@@ -34,12 +34,6 @@ main() {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  printf "${BLUE}Starting installation...${NORMAL}\n"
-  hash git >/dev/null 2>&1 || {
-    echo "Error: git is not installed"
-    exit 1
-  }
-
   # Check OS is Linux
   if [ "$OSTYPE" != linux-gnu ]; then
     if git --version | grep msysgit > /dev/null; then
