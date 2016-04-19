@@ -36,11 +36,12 @@ myubuntu() {
   printf "${BLUE}Installing Ubuntu prepared packages...${NORMAL}\n"
   sudo apt-get -y install \
       git \
-  ##    emacs24-nox \
-  ##    byobu \
       zsh \
       curl \
       wget       
+
+  ##    emacs24-nox \
+  ##    byobu \
 
   # git directory structure
   mkdir -p ~/git/src/github.com
