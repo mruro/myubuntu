@@ -38,6 +38,7 @@ myubuntu() {
 
   # git directory structure
   mkdir -p ~/git/src/github.com
+  mkdir -p ~/git/src/safelayer.com
 
   # config Byobu
   printf "${BLUE}Installing and configuring Byobu...${NORMAL}\n"
