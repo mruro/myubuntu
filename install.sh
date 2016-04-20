@@ -45,9 +45,6 @@ myubuntu() {
     openssh-client \
     terminator
     
-  # set default shell to zsh (needed to avoid oh-my-zsh to request sudo chsh password)
-  chsh -s /usr/bin/zsh
-
   # git directory structure
   mkdir -p ~/git/src/github.com
 
