@@ -29,8 +29,9 @@ awscli() {
   curl -JL "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" > /tmp/awscli-bundle.zip
   unzip /tmp/awscli-bundle.zip -d /tmp
   sudo /tmp/awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-  printf "${GREEN}$(/usr/local/bin/aws --version)${NORMAL}\n"
-  
+  printf "${GREEN}"
+  /usr/local/bin/aws --version
+  printf "${NORMAL}\n"
 }
 
 awscli
