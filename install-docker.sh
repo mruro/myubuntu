@@ -32,23 +32,24 @@ minimal() {
   
   if [ ! -e /etc/apt/sources.list.d/docker.list ]; then
       # 14.04 LTS
-      echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /tmp/docker.list
+      # echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /tmp/docker.list
       # 16.04 LTS
-      # echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" > /tmp/docker.list
-      sudo mv /tmp/docker.list /etc/apt/sources.list.d/docker.list
+      echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" > /tmp/docker.list
+cat       sudo mv /tmp/docker.list /etc/apt/sources.list.d/docker.list
   fi
 
   sudo apt-get update
+  apt-cache policy docker-engine
   # sudo apt-get -y purge lxc-docker
+  sudo apt-get -y upgrade
   sudo apt-get -y install linux-image-extra-$(uname -r)
   sudo apt-get -y install apparmor
 
   # This is not in docker reference doc (maybe needed on beta 16.04 LTS only)
-  sudo apt-get -y install cgroupfs-mount
+  ## sudo apt-get -y install cgroupfs-mount
   # This is not in docker reference doc (maybe needed on beta 16.04 LTS only)
-  sudo apt-get -y install aufs-tools
+  ## sudo apt-get -y install aufs-tools
 
-  sudo apt-get -y install apparmor
   sudo apt-get -y install docker-engine
   sudo usermod -aG docker $USER
   printf "${YELLOW}You must logout and login to use Docker without sudo (use sudo docker ... meanwhile)...${NORMAL}\n"

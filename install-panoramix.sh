@@ -26,6 +26,7 @@ panoramix() {
 
   printf "${BLUE}Installing Ruby, Rake and Python...${NORMAL}\n"
   sudo apt-get install -y ruby rake python
+
   printf "${BLUE}Installing Panoràmix...${NORMAL}\n"
   sudo gem install panoramix
 }
