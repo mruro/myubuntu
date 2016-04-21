@@ -32,7 +32,7 @@ minimal() {
 
   wget http://downloads.sourceforge.net/project/liteide/X29/liteidex29.linux-64-qt4.tar.bz2 -O /tmp/liteide.tar.bz2
   bzip2 -d /tmp/liteide.tar.bz2
-  tar -C ~/liteide -xf /tmp/liteide.tar
+  tar -C ~ -xf /tmp/liteide.tar
 }
 
 # Check if reboot is needed
