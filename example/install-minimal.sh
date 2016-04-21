@@ -1,7 +1,4 @@
-#!/bin/sh
-# From https://github.com/robbyrussell/oh-my-zsh/blob/master/tools/install.sh
-
-myubuntu() {
+minimal() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
   if which tput >/dev/null 2>&1; then
@@ -27,12 +24,6 @@ myubuntu() {
   # which may fail on systems lacking tput or terminfo
   set -e
  
-  printf "${BLUE}Upgrading Ubuntu...${NORMAL}\n"
-  sudo apt-get update
-  sudo apt-get -y upgrade
-  sudo apt-get -y dist-upgrade
-  sudo apt-get -y autoremove
-
   printf "${BLUE}Installing Ubuntu prepared packages...${NORMAL}\n"
   sudo apt-get -y install \
     curl \
@@ -119,4 +110,4 @@ EOF
 }
 
 # Check if reboot is needed
-myubuntu
+minimal
