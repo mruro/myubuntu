@@ -25,11 +25,12 @@ byobu() {
   set -e
  
   # config Byobu
-  printf "${BLUE}Installing and configuring Byobu...${NORMAL}\n"
-  byobu-ctrl-a emacs
-
   if [ ! -d ~/.byobu ]; then
-  cat > ~/.byobu/.tmux.conf <<EOF
+      sudo apt-get -y install byobu
+      printf "${BLUE}Installing and configuring Byobu...${NORMAL}\n"
+      byobu-ctrl-a emacs
+
+      cat > ~/.byobu/.tmux.conf <<EOF
 set -g mouse-select-pane on
 set -g mouse-select-window on
 set -g mouse-resize-pane on
@@ -37,6 +38,8 @@ set -g mouse-utf8 on
 set -g default-shell /usr/bin/zsh
 set -g default-command /usr/bin/zsh
 EOF
+  else
+      printf "${YELLOW}Byobu already installed... skipping${NORMAL}\n"
   fi
 
 }

@@ -28,11 +28,11 @@ everything() {
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-byobu.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-zsh.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-powerlinefonts.sh -O -)"
-  bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-docker.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-golang.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-golangliteide.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-awscli.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-panoramix.sh -O -)"
+  bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-docker.sh -O -)"
   # bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-emacsconfig.sh -O -)"      # emacs for Go, Ruby, Bash
   # bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-visualstudiocode.sh -O -)" # Visual Studio Code
 }
