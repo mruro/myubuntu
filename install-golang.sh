@@ -28,7 +28,7 @@ minimal() {
   # Golang
   printf "${BLUE}Installing Go...${NORMAL}\n"
   wget https://storage.googleapis.com/golang/go1.6.1.linux-amd64.tar.gz -O /tmp/golang.tgz
-  tar -C ~/go -xzf /tmp/golang.tgz 
+  tar -C ~/ -xzf /tmp/golang.tgz 
   if [ -e ~/.zshrc ]; then
       cat >> ~/.zshrc <<EOF
 export GOPATH=\$HOME/git
