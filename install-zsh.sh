@@ -31,6 +31,9 @@ zsh() {
   chmod 700 /tmp/install-zsh.sh
   bash -c /tmp/install-zsh.sh
   sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"agnoster\"/" ~/.zshrc  
+
+  # Choice my plugins
+  sed -i "s/plugins=([^)]*)/plugins=(git golang docker aws rake)/" ~/.zshrc
 }
 
 # Check if reboot is needed

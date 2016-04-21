@@ -35,8 +35,6 @@ everything() {
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-panoramix.sh -O -)"
   # bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-emacsconfig.sh -O -)"      # emacs for Go, Ruby, Bash
   # bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-visualstudiocode.sh -O -)" # Visual Studio Code
-  # Atom 
-  # Sublime
 }
 
 everything
