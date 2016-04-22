@@ -75,6 +75,8 @@ EOF
 }
 EOF
     fi
+
+    printf "${YELLOW}Go plugin Visual Studio Code: install it with <Ctrl+Shift+P> and then 'ext install go'...${NORMAL}\n"
 }
 
 # Check if reboot is needed
