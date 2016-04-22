@@ -50,9 +50,9 @@ EOF
   fi
 
   
-  GOPATH=~/git
-  GOROOT=~/go
-  PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+  export GOPATH=~/git
+  export GOROOT=~/go
+  export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
   # Install stringer (for //go:generate -> https://blog.golang.org/generate)
   go get golang.org/x/tools/cmd/stringer
