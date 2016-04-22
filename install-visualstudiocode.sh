@@ -51,6 +51,25 @@ vsc() {
     "go.gocodeAutoBuild": false
 }
 EOF
+
+    if [ ! -e ~/.vscode/launch.json ]; then
+      cat > ~/.vscode/launch.json <<EOF
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceRoot}",
+            "env": {},
+            "args": []
+        }
+    ]
+}
+EOF
+
 }
 
 # Check if reboot is needed
