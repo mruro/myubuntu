@@ -51,6 +51,7 @@ vsc() {
     "go.gocodeAutoBuild": false
 }
 EOF
+    fi
 
     if [ ! -e ~/.vscode/launch.json ]; then
       cat > ~/.vscode/launch.json <<EOF
@@ -69,7 +70,7 @@ EOF
     ]
 }
 EOF
-
+    fi
 }
 
 # Check if reboot is needed
