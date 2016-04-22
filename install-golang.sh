@@ -1,4 +1,4 @@
-minimal() {
+golang() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
   if which tput >/dev/null 2>&1; then
@@ -50,13 +50,16 @@ EOF
   go get golang.org/x/tools/cmd/stringer
 
   # Install Delve Debugger
+  printf "${BLUE}Installing Delve Debugger...${NORMAL}\n"
   go get github.com/derekparker/delve/cmd/dlv
 
   # Install GoMetaLinter
+  printf "${BLUE}Installing GoMetaLinter...${NORMAL}\n"
   go get -u github.com/alecthomas/gometalinter
   gometalinter --install --update 
 
   # Install debugging, testing, linting tools (Meet Visual Studio Code 1.0.0 requirements)
+  printf "${BLUE}Installing some Go tools...${NORMAL}\n"
   go get -u -v github.com/nsf/gocode
   go get -u -v github.com/rogpeppe/godef
   go get -u -v github.com/golang/lint/golint
@@ -69,4 +72,4 @@ EOF
 }
 
 # Check if reboot is needed
-minimal
+golang
