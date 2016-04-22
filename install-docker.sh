@@ -35,7 +35,7 @@ minimal() {
       # echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /tmp/docker.list
       # 16.04 LTS
       echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" > /tmp/docker.list
-cat       sudo mv /tmp/docker.list /etc/apt/sources.list.d/docker.list
+      sudo mv /tmp/docker.list /etc/apt/sources.list.d/docker.list
   fi
 
   sudo apt-get update

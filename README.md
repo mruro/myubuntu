@@ -1,8 +1,8 @@
 # myubuntu
 
-Sets up my Ubuntu Desktop System (experimental)
+Sets up my Ubuntu 16.04 Desktop System (experimental)
 
-To execute it, you must login with your username (must be sudoer):
+To execute it, you must login with your username (must be sudoer) to a clean Ubuntu 16.04 Desktop installation:
 
 ### Full Installation
 
