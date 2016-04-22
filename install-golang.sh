@@ -26,8 +26,11 @@ minimal() {
  
   ###################################
   # Golang
+
+  VERSION=1.6.1
+
   printf "${BLUE}Installing Go...${NORMAL}\n"
-  wget https://storage.googleapis.com/golang/go1.6.1.linux-amd64.tar.gz -O /tmp/golang.tgz
+  wget https://storage.googleapis.com/golang/go$VERSION.linux-amd64.tar.gz -O /tmp/golang.tgz
   tar -C ~ -xzf /tmp/golang.tgz 
   if [ -e ~/.zshrc ]; then
       cat >> ~/.zshrc <<EOF
@@ -42,6 +45,27 @@ export GOROOT=\$HOME/go
 export PATH=\$PATH:\$GOPATH/bin:\$GOROOT/bin
 EOF
   fi
+
+  # Install stringer (for //go:generate -> https://blog.golang.org/generate)
+  go get golang.org/x/tools/cmd/stringer
+
+  # Install Delve Debugger
+  go get github.com/derekparker/delve/cmd/dlv
+
+  # Install GoMetaLinter
+  go get -u github.com/alecthomas/gometalinter
+  gometalinter --install --update 
+
+  # Install debugging, testing, linting tools (Meet Visual Studio Code 1.0.0 requirements)
+  go get -u -v github.com/nsf/gocode
+  go get -u -v github.com/rogpeppe/godef
+  go get -u -v github.com/golang/lint/golint
+  go get -u -v github.com/lukehoban/go-outline
+  go get -u -v sourcegraph.com/sqs/goreturns
+  go get -u -v golang.org/x/tools/cmd/gorename
+  go get -u -v github.com/tpng/gopkgs
+  go get -u -v github.com/newhook/go-symbols
+  go get -u -v golang.org/x/tools/cmd/guru
 }
 
 # Check if reboot is needed
