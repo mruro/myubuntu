@@ -32,14 +32,17 @@ golang() {
   printf "${BLUE}Installing Go...${NORMAL}\n"
   wget https://storage.googleapis.com/golang/go$VERSION.linux-amd64.tar.gz -O /tmp/golang.tgz
   tar -C ~ -xzf /tmp/golang.tgz 
-  if [ -e ~/.zshrc ]; then
-      cat >> ~/.zshrc <<EOF
+
+  if [ -e ~/.bashrc ]; then
+      cat >> ~/.bashrc <<EOF
 export GOPATH=\$HOME/git
 export GOROOT=\$HOME/go
 export PATH=\$PATH:\$GOPATH/bin:\$GOROOT/bin
 EOF
+  fi
 
-      cat >> ~/.bashrc <<EOF
+  if [ -e ~/.zshrc ]; then
+      cat >> ~/.zshrc <<EOF
 export GOPATH=\$HOME/git
 export GOROOT=\$HOME/go
 export PATH=\$PATH:\$GOPATH/bin:\$GOROOT/bin
