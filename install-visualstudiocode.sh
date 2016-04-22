@@ -29,7 +29,7 @@ minimal() {
   printf "${BLUE}Installing Go...${NORMAL}\n"
   sudo apt-get -y install git
   wget https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-amd64.deb -O /tmp/vscode.deb
-  dpkg -i /tmp/vscode.deb
+  sudo dpkg -i /tmp/vscode.deb
 }
 
 # Check if reboot is needed
