@@ -32,7 +32,11 @@ vsc() {
   wget https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-amd64.deb -O /tmp/vscode.deb
   sudo dpkg -i /tmp/vscode.deb
 
-    if [ ! -e ~/.vscode/settings.json ]; then
+  if [ ! -d ~/.vscode ]; then
+      mkdir ~/.vscode
+  fi
+
+  if [ ! -e ~/.vscode/settings.json ]; then
       cat > ~/.vscode/settings.json <<EOF
 {
     "go.buildOnSave": true,
