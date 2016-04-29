@@ -1,4 +1,4 @@
-byobu() {
+gitinstall() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
   if which tput >/dev/null 2>&1; then
@@ -24,27 +24,13 @@ byobu() {
   # which may fail on systems lacking tput or terminfo
   set -e
  
-  # config Byobu
-  printf "${BLUE}Installing Byobu...${NORMAL}\n"
-  sudo apt-get -y install byobu
+  printf "${BLUE}Installing Git...${NORMAL}\n"
+  sudo apt-get -y install \
+    git
   
-  if [ ! -d ~/.byobu ]; then
-      printf "${BLUE}Configuring Byobu...${NORMAL}\n"
-      byobu-ctrl-a emacs
-
-      cat > ~/.byobu/.tmux.conf <<EOF
-set -g mouse-select-pane on
-set -g mouse-select-window on
-set -g mouse-resize-pane on
-set -g mouse-utf8 on
-set -g default-shell /usr/bin/zsh
-set -g default-command /usr/bin/zsh
-EOF
-  else
-      printf "${YELLOW}Byobu already configured... skipping${NORMAL}\n"
-  fi
-
+  printf "${BLUE}Configuring Git...${NORMAL}\n"
+  svn checkout https://github.com/jig/myubuntu/trunk/gitconfig
 }
 
 # Check if reboot is needed
-byobu
+gitinstall

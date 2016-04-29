@@ -34,6 +34,9 @@ everything() {
   
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-basepackages.sh -O -)"
   
+  # git+minimal config
+  bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-git.sh -O -)"
+
   # emacs+minimal go syntax highlighting
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-emacs.sh -O -)"
   
@@ -55,6 +58,9 @@ everything() {
 
   # Docker, Docker Compose, Docker Machiney
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-docker.sh -O -)"
+  
+  # Final recommendations
+  printf "${YELLOW}Installation finished. A REBOOT is recommended now.${NORMAL}\n"
 }
 
 everything

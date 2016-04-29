@@ -52,7 +52,7 @@ minimal() {
 
   sudo apt-get -y install docker-engine
   sudo usermod -aG docker $USER
-  printf "${YELLOW}You must logout and login to use Docker without sudo (use sudo docker ... meanwhile)...${NORMAL}\n"
+  printf "${YELLOW}You must logout and login to use Docker without sudo... (use sudo docker... meanwhile)${NORMAL}\n"
   
   # Docker Compose i Machine
   printf "${BLUE}Installing docker-compose...${NORMAL}\n"
