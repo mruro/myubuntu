@@ -10,5 +10,5 @@
 (setq auto-save-file-name-transforms
   `((".*" ,temporary-file-directory t)))
 
-# From http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/ below
+; From http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/ below
 
