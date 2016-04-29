@@ -23,16 +23,32 @@ everything() {
   set -e
 
   BRANCH="master"
+  
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-distroupdate.sh -O -)"
+  
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-basepackages.sh -O -)"
-  bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-byobu.sh -O -)"
+  
+  # emacs+minimal go syntax highlighting
+  bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-emacs.sh -O -)"
+  
+  # ZSH+Oh-my-ZSH
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-zsh.sh -O -)"
+  
+  # Byobu+ZSH
+  bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-byobu.sh -O -)"
+  
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-powerlinefonts.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-golang.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-golangliteide.sh -O -)"
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-awscli.sh -O -)"
+  
+  # Ruby+Panoràmix
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-panoramix.sh -O -)"
+  
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-visualstudiocode.sh -O -)"
+
+  # Docker, Docker Compose, Docker Machiney
+  
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-docker.sh -O -)"
   # bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-emacsconfig.sh -O -)"      # emacs for Go, Ruby, Bash
 }
