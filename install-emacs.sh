@@ -24,11 +24,12 @@ emacsinstall() {
   # which may fail on systems lacking tput or terminfo
   set -e
  
-  printf "${BLUE}Installing and configuring Emacs...${NORMAL}\n"
+  printf "${BLUE}Installing Emacs...${NORMAL}\n"
   sudo apt-get -y install \
     emacs24-nox \
     subversion
   
+  printf "${BLUE}Configuring Emacs...${NORMAL}\n"
   svn checkout https://github.com/jig/myubuntu/trunk/emacs.d .emacs.d
 }
 

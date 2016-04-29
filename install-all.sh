@@ -25,6 +25,7 @@ everything() {
   # Currently Xenial local repositories are slow (?). 
   # Pass to U.S. servers for faster install
   # Remove this if not needed anymore
+  printf "${BLUE}Switching to U.S. archive servers...${NORMAL}\n"
   sudo sed -i "s@/es.@/us.@" /etc/apt/sources.list
 
   # Install begins
