@@ -22,8 +22,13 @@ everything() {
 
   set -e
 
+  # Currently Xenial local repositories are slow (?). 
+  # Pass to U.S. servers for faster install
+  # Remove this if not needed anymore
+  sudo sed -i "s@/es.@/us.@" /etc/apt/sources.list
+
+  # Install begins
   BRANCH="master"
-  
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-distroupdate.sh -O -)"
   
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-basepackages.sh -O -)"
@@ -48,9 +53,7 @@ everything() {
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-visualstudiocode.sh -O -)"
 
   # Docker, Docker Compose, Docker Machiney
-  
   bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-docker.sh -O -)"
-  # bash -c "$(wget https://raw.githubusercontent.com/jig/myubuntu/$BRANCH/install-emacsconfig.sh -O -)"      # emacs for Go, Ruby, Bash
 }
 
 everything
