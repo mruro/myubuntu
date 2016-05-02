@@ -33,7 +33,7 @@ minimal() {
   if [ ! -e /etc/apt/sources.list.d/docker.list ]; then
       # 14.04 LTS
       # echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /tmp/docker.list
-      # 16.04 LTS
+      # 16.04 LTS (new default version)
       echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" > /tmp/docker.list
       sudo mv /tmp/docker.list /etc/apt/sources.list.d/docker.list
   fi
